@@ -1,0 +1,68 @@
+
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.barra-superior {
+  width: 35em;
+  display: flex;
+  flex-direction: row;
+  background-color: hsl(10, 79%, 65%);
+  justify-content: space-between;
+}
+
+.balance {
+  background-color:  red;
+}
+.simbolos-circulares {
+  background-color: azure;
+}
+
+.contenedor-principal {
+  width: 35em;
+  height: 40em;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+.grafico {
+  display: flex;
+  flex-direction: row;
+}
+.barras {
+  height: 20em;
+  width: 100%;
+  display: flex;
+  justify-content:flex-end;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.item-amount {
+  margin-left: 1em;
+  text-align: center;
+  width: 3.5em;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 0.3em;
+}
+
+.item-max {
+    margin-left: 1em;
+    text-align: center;
+    width: 3.5em;
+    background-color: hsl(186, 34%, 60%);
+    border-radius: 0.3em;
+}
+.item-day{
+  text-align: center;
+  margin-left: 1em;
+  width: 3.5em;
+  background-color: yellowgreen;
+  
+}
