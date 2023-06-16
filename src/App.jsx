@@ -5,15 +5,21 @@ import { useState } from 'react'
 
 function App() {
   const myBalance = data.reduce((acum, item) => acum + item.amount, 0)
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState({})
   const diaActual = new Date().getDay()
   const diasSemana =['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
   const hoy=  diasSemana[diaActual]
-  const handleMouseOver = () => {
-    setShow(true)
+  const handleMouseOver = (day) => {
+    setShow((prevState) => ({
+      ...prevState,
+      [day]: true
+    }))
   }
-  const handleMouseOut = () => {
-    setShow(false)
+  const handleMouseOut = (day) => {
+    setShow((prevState) => ({
+      ...prevState,
+      [day]: false
+    }))
   }
 
   return (
@@ -27,13 +33,13 @@ function App() {
           <div className='simbolos-circulares'> tururu</div>
         </div>
         <div className='contenedor-principal'>
-          <h2>Spending - Last 7 days</h2>
+          <h2 className='title'>Spending - Last 7 days</h2>
           <div className='grafico'>
             {
               data.map(item => (
                 <div key={item.day} className='barras'>
-                  {show && <div>{item.amount}</div>}
-                  <div className={item.day === hoy ? 'item-actual-day' : 'item-amount'} style={{ height: item.amount*3}} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{item.amount}</div>
+                  {show[item.day] && <div className='amount'>${item.amount}</div>}
+                  <div className={item.day === hoy ? 'item-actual-day' : 'item-amount'} style={{ height: item.amount*3}} onMouseOver={()=>handleMouseOver(item.day)} onMouseOut={()=>handleMouseOut(item.day)}></div>
                   <div className='item-day'>{item.day}</div>
                 </div>
                 
@@ -47,7 +53,7 @@ function App() {
               <h1>$478.33</h1>
             </div>
             <div className='variacion'>
-              <p>+2.4%</p>
+              <p className='porcentaje'>+2.4%</p>
               <p>from last month</p>
             </div>
           </div>
