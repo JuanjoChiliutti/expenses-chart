@@ -3,6 +3,7 @@
 .main {
   width: 100vw;
   height: 100vh;
+  background-color: hsl(27, 66%, 92%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,19 +15,27 @@
   flex-direction: row;
   background-color: hsl(10, 79%, 65%);
   justify-content: space-between;
+  border-radius: 1em;
 }
 
 .balance {
-  background-color:  red;
+  border-radius: 1em;
+  font-family: 'DM Sans';
+  font-weight: 400;
+  color: rgb(255, 255, 255)
 }
 .simbolos-circulares {
+
   background-color: azure;
+  border-radius: 1em;
 }
 
 .contenedor-principal {
+  margin-top: 1em;
   width: 35em;
   height: 40em;
-  background-color: yellow;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
 }
@@ -41,7 +50,7 @@
   display: flex;
   justify-content:flex-end;
   flex-direction: column;
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
 }
 
 .item-amount {
@@ -52,7 +61,7 @@
   border-radius: 0.3em;
 }
 
-.item-max {
+.item-actual-day {
     margin-left: 1em;
     text-align: center;
     width: 3.5em;
@@ -62,7 +71,13 @@
 .item-day{
   text-align: center;
   margin-left: 1em;
-  width: 3.5em;
-  background-color: yellowgreen;
-  
+  width: 3.5em;  
+}
+hr {
+  width: 90%;
+  border: solid 1px gray
+}
+.contenedor-totales {
+  display: flex;
+  justify-content: space-between;
 }
