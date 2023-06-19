@@ -30,7 +30,10 @@ function App() {
             <p>My Balance</p>
             <h2>$921,48</h2>
           </div>
-          <div className='simbolos-circulares'> tururu</div>
+          <div className='simbolos-circulares'> 
+            <div className='circulo-vacio'></div>
+            <div className='circulo-lleno'></div>
+          </div>
         </div>
         <div className='contenedor-principal'>
           <h2 className='title'>Spending - Last 7 days</h2>
@@ -40,7 +43,7 @@ function App() {
                 <div key={item.day} className='barras'>
                   {show[item.day] && <div className='amount'>${item.amount}</div>}
                   <div className={item.day === hoy ? 'item-actual-day' : 'item-amount'} style={{ height: item.amount*3}} onMouseOver={()=>handleMouseOver(item.day)} onMouseOut={()=>handleMouseOut(item.day)}></div>
-                  <div className='item-day'>{item.day}</div>
+                  <div className='item-day letra-gris'>{item.day}</div>
                 </div>
                 
               ))
@@ -49,12 +52,12 @@ function App() {
           <hr />
           <div className='contenedor-totales'>
             <div className='total-mes'>
-              <p>Total this month</p>
+              <p className='letra-gris'>Total this month</p>
               <h1>$478.33</h1>
             </div>
             <div className='variacion'>
               <p className='porcentaje'>+2.4%</p>
-              <p>from last month</p>
+              <p className='letra-gris'>from last month</p>
             </div>
           </div>
         </div>
